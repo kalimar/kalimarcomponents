@@ -23,26 +23,17 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function fancyButton() {
-  class FancyButton extends _react.default.Component {
-    render() {
-      const _this$props = this.props,
-            {
-        ariaLabel
-      } = _this$props,
-            otherProps = _objectWithoutProperties(_this$props, ["ariaLabel"]);
+function FancyButton(props) {
+  const {
+    ariaLabel
+  } = props,
+        otherProps = _objectWithoutProperties(props, ["ariaLabel"]);
 
-      return /*#__PURE__*/_react.default.createElement(_reactUswds.Button, _extends({}, otherProps, {
-        "aria-label": ariaLabel
-      }));
-    }
-
-  }
-
-  return FancyButton;
+  return /*#__PURE__*/_react.default.createElement(_reactUswds.Button, _extends({}, otherProps, {
+    "aria-label": ariaLabel
+  }));
 }
 
-const FancyButton = fancyButton();
 FancyButton.propTypes = {
   ariaLabel: _propTypes.default.string.isRequired
 };
