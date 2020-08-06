@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@trussworks/react-uswds';
 import '@trussworks/react-uswds/lib/uswds.css';
+import PropTypes from 'prop-types';
 
 function fancyButton() {
   class FancyButton extends React.Component {
@@ -13,5 +14,9 @@ function fancyButton() {
 }
 
 const FancyButton = fancyButton();
+
+FancyButton.propTypes = {
+  ariaLabel: PropTypes.string.isRequired
+}
 
 export default FancyButton;
