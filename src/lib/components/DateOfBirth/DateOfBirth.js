@@ -2,11 +2,7 @@ import React from 'react';
 import { DateInput, DateInputGroup, Fieldset } from '@trussworks/react-uswds';
 import './style.scss';
 
-
-
 function DateOfBirth(props) {
-
-
   return (
     <Fieldset className="date-of-birth" legend="Date of birth">
     <span className="usa-hint" id="dateOfBirthHint">

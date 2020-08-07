@@ -5,7 +5,7 @@ import DateOfBirth from '../lib/components/DateOfBirth/DateOfBirth.js';
 
 export default {
   title: 'Date of Birth Example',
-  component: DateInput,
+  component: DateOfBirth,
   parameters: {
     info: `
 USWDS 2.0 DateInput component
