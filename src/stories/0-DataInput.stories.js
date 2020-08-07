@@ -1,6 +1,5 @@
 import React from 'react';
-import { DateInputGroup, Fieldset } from '@trussworks/react-uswds';
-import DateInput from '../lib/components/DateInput';
+import { DateInput, DateInputGroup, Fieldset } from '@trussworks/react-uswds';
 
 export default {
   title: 'Date of Birth Example',
@@ -13,18 +12,7 @@ Source: https://designsystem.digital.gov/components/form-controls/#date-input
   }
 };
 
-export const monthDateInput = () => (
-  <DateInput
-  id="testDateInput"
-  name="testName"
-  label="Month"
-  unit="month"
-  maxLength={2}
-  minLength={2}
-  />
-);
-
-export const dateOfBirthExample = () => {
+export const dateOfBrithExample = () => {
 return (
   <Fieldset legend="Date of birth">
     <span className="usa-hint" id="dateOfBirthHint">

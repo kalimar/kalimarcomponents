@@ -12,7 +12,7 @@ Object.defineProperty(exports, "FancyButton", {
 Object.defineProperty(exports, "DateInput", {
   enumerable: true,
   get: function get() {
-    return _DateInput.default;
+    return _reactUswds.DateInput;
   }
 });
 Object.defineProperty(exports, "DateInputGroup", {
@@ -29,8 +29,6 @@ Object.defineProperty(exports, "Fieldset", {
 });
 
 var _FancyButton = _interopRequireDefault(require("./components/FancyButton"));
-
-var _DateInput = _interopRequireDefault(require("./components/DateInput"));
 
 var _reactUswds = require("@trussworks/react-uswds");
 

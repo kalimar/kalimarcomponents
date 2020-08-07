@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@trussworks/react-uswds';
-import PropTypes from 'prop-types';
 import '@trussworks/react-uswds/lib/uswds.css';
+import PropTypes from 'prop-types';
 
 
 function FancyButton(props) {
@@ -12,10 +12,7 @@ function FancyButton(props) {
 }
 
 FancyButton.propTypes = {
-  ariaLabel: PropTypes.string.isRequired,
-  type: PropTypes.bool,
-  secondary: PropTypes.bool,
-  base: PropTypes.bool
+  ariaLabel: PropTypes.string.isRequired
 }
 
 export default FancyButton;

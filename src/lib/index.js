@@ -1,5 +1,5 @@
 import FancyButton from './components/FancyButton';
-import DateInput from './components/DateInput';
+import { DateInput } from '@trussworks/react-uswds';
 import { DateInputGroup } from '@trussworks/react-uswds';
 import { Fieldset } from '@trussworks/react-uswds';
 
