@@ -11,9 +11,9 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactUswds = require("@trussworks/react-uswds");
 
-require("@trussworks/react-uswds/lib/uswds.css");
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
+
+require("@trussworks/react-uswds/lib/uswds.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35,7 +35,10 @@ function FancyButton(props) {
 }
 
 FancyButton.propTypes = {
-  ariaLabel: _propTypes.default.string.isRequired
+  ariaLabel: _propTypes.default.string.isRequired,
+  type: _propTypes.default.bool,
+  secondary: _propTypes.default.bool,
+  base: _propTypes.default.bool
 };
 var _default = FancyButton;
 exports.default = _default;
