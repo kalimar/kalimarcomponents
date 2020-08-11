@@ -45,7 +45,7 @@ function FancyButton(props) {
 FancyButton.propTypes = {
   disabled: PropTypes.bool,
   isLoading: PropTypes.bool,
-  loadingText: PropTypes.string,
+  loadingText: PropTypes.node,
   onClick: PropTypes.func
 }
 
