@@ -23,19 +23,22 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
+const checkAriaDisabled = disabledProp => disabledProp ? "true" : "false";
+
 function FancyButton(props) {
   const {
-    ariaLabel
+    disabled
   } = props,
-        otherProps = _objectWithoutProperties(props, ["ariaLabel"]);
+        otherProps = _objectWithoutProperties(props, ["disabled"]);
 
   return /*#__PURE__*/_react.default.createElement(_reactUswds.Button, _extends({}, otherProps, {
-    "aria-label": ariaLabel
+    disabled: disabled,
+    "aria-disabled": checkAriaDisabled(disabled)
   }));
 }
 
 FancyButton.propTypes = {
-  ariaLabel: _propTypes.default.string.isRequired
+  disabled: _propTypes.default.bool
 };
 var _default = FancyButton;
 exports.default = _default;

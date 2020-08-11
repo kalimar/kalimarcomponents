@@ -4,7 +4,7 @@ import { DateInput } from '@trussworks/react-uswds';
 
 const App = () => (
     <div style={{ width: 640, margin: "15px auto" }}>
-        <FancyButton secondary ariaLabel="submit">Submit</FancyButton>
+        <FancyButton type="button" disabled>Submit</FancyButton>
        <DateInput/>
     </div>
 )

@@ -14,8 +14,8 @@ export default {
 
 export const defaultButton = () => <FancyButton type="button">Click Me</FancyButton>;
 
-export const secondary = () => (
-  <FancyButton secondary ariaLabel="submit">
+export const disabled = () => (
+  <FancyButton disabled>
     Click Me
   </FancyButton>
 );

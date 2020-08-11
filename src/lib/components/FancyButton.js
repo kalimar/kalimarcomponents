@@ -3,16 +3,18 @@ import { Button } from '@trussworks/react-uswds';
 import '@trussworks/react-uswds/lib/uswds.css';
 import PropTypes from 'prop-types';
 
+const checkAriaDisabled = (disabledProp) => disabledProp ? "true" : "false";
 
 function FancyButton(props) {
-  const { ariaLabel, ...otherProps} = props;
+  const { disabled, ...otherProps} = props;
+
   return (
-    <Button {...otherProps} aria-label={ariaLabel}/>
+    <Button {...otherProps} disabled={disabled} aria-disabled={checkAriaDisabled(disabled)}/>
   )
 }
 
 FancyButton.propTypes = {
-  ariaLabel: PropTypes.string.isRequired
+  disabled: PropTypes.bool
 }
 
 export default FancyButton;

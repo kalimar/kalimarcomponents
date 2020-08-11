@@ -27,6 +27,12 @@ Object.defineProperty(exports, "Fieldset", {
     return _reactUswds.Fieldset;
   }
 });
+Object.defineProperty(exports, "Alert", {
+  enumerable: true,
+  get: function get() {
+    return _reactUswds.Alert;
+  }
+});
 Object.defineProperty(exports, "DateOfBirth", {
   enumerable: true,
   get: function get() {
