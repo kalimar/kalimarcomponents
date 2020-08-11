@@ -21,21 +21,21 @@ function DateOfBirth(props) {
     className: "usa-hint",
     id: "dateOfBirthHint"
   }, "mm/dd/yyyy"), /*#__PURE__*/_react.default.createElement(_reactUswds.DateInputGroup, null, /*#__PURE__*/_react.default.createElement(_reactUswds.DateInput, {
-    id: "testDateInput",
+    id: "testDateInputMonth",
     name: "testName",
     label: "Month",
     unit: "month",
     maxLength: 2,
     minLength: 2
   }), /*#__PURE__*/_react.default.createElement(_reactUswds.DateInput, {
-    id: "testDateInput",
+    id: "testDateInputDay",
     name: "testName",
     label: "Day",
     unit: "day",
     maxLength: 2,
     minLength: 2
   }), /*#__PURE__*/_react.default.createElement(_reactUswds.DateInput, {
-    id: "testDateInput",
+    id: "testDateInputYear",
     name: "testName",
     label: "Year",
     unit: "year",

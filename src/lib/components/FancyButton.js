@@ -46,8 +46,7 @@ FancyButton.propTypes = {
   disabled: PropTypes.bool,
   isLoading: PropTypes.bool,
   loadingText: PropTypes.string,
-  onClick: PropTypes.func,
-  disabled: PropTypes.bool,  
+  onClick: PropTypes.func
 }
 
 export default FancyButton;
