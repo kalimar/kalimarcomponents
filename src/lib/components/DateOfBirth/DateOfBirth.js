@@ -10,7 +10,7 @@ function DateOfBirth(props) {
     </span>
     <DateInputGroup>
       <DateInput
-        id="testDateInput"
+        id="testDateInputMonth"
         name="testName"
         label="Month"
         unit="month"
@@ -18,7 +18,7 @@ function DateOfBirth(props) {
         minLength={2}
       />
       <DateInput
-        id="testDateInput"
+        id="testDateInputDay"
         name="testName"
         label="Day"
         unit="day"
@@ -26,7 +26,7 @@ function DateOfBirth(props) {
         minLength={2}
       />
       <DateInput
-        id="testDateInput"
+        id="testDateInputYear"
         name="testName"
         label="Year"
         unit="year"

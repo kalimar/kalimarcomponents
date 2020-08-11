@@ -3,18 +3,51 @@ import { Button } from '@trussworks/react-uswds';
 import '@trussworks/react-uswds/lib/uswds.css';
 import PropTypes from 'prop-types';
 
-const checkAriaDisabled = (disabledProp) => disabledProp ? "true" : "false";
 
 function FancyButton(props) {
-  const { disabled, ...otherProps} = props;
+  const {
+    isLoading,
+    loadingText,
+    onClick,
+    disabled,  
+    ...otherProps} 
+    = props;
+
+  const computerisDisabled = disabled || isLoading;
+
+  const handleMouseDown = (evt) => {
+    if (disabled || isLoading) {
+      evt.preventDefault();
+  }
+}
+
+  const handleClick = (evt) => {
+    if (disabled || isLoading) {
+      evt.preventDefault();
+    } else if (onClick) {
+      onClick(evt);
+    }
+  }
 
   return (
-    <Button {...otherProps} disabled={disabled} aria-disabled={checkAriaDisabled(disabled)}/>
+    <Button
+    aria-disabled={computerisDisabled ? true : undefined }
+    aria-live="polite"
+    aria-busy={isLoading ? true : false}
+    aria-label={isLoading ? 'Loading' : undefined }
+    disabled={disabled}
+    onClick={(evt) => handleClick(evt)}
+    onMouseDown={(evt) => handleMouseDown(evt)}
+    {...otherProps}/>
   )
 }
 
 FancyButton.propTypes = {
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  isLoading: PropTypes.bool,
+  loadingText: PropTypes.string,
+  onClick: PropTypes.func,
+  disabled: PropTypes.bool,  
 }
 
 export default FancyButton;

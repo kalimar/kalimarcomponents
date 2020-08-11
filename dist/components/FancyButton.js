@@ -23,21 +23,47 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-const checkAriaDisabled = disabledProp => disabledProp ? "true" : "false";
-
 function FancyButton(props) {
   const {
+    isLoading,
+    loadingText,
+    onClick,
     disabled
   } = props,
-        otherProps = _objectWithoutProperties(props, ["disabled"]);
+        otherProps = _objectWithoutProperties(props, ["isLoading", "loadingText", "onClick", "disabled"]);
 
-  return /*#__PURE__*/_react.default.createElement(_reactUswds.Button, _extends({}, otherProps, {
+  const computerisDisabled = disabled || isLoading;
+
+  const handleMouseDown = evt => {
+    if (disabled || isLoading) {
+      evt.preventDefault();
+    }
+  };
+
+  const handleClick = evt => {
+    if (disabled || isLoading) {
+      evt.preventDefault();
+    } else if (onClick) {
+      onClick(evt);
+    }
+  };
+
+  return /*#__PURE__*/_react.default.createElement(_reactUswds.Button, _extends({
+    "aria-disabled": computerisDisabled ? true : undefined,
+    "aria-live": "polite",
+    "aria-busy": isLoading ? true : false,
+    "aria-label": isLoading ? 'Loading' : undefined,
     disabled: disabled,
-    "aria-disabled": checkAriaDisabled(disabled)
-  }));
+    onClick: evt => handleClick(evt),
+    onMouseDown: evt => handleMouseDown(evt)
+  }, otherProps));
 }
 
 FancyButton.propTypes = {
+  disabled: _propTypes.default.bool,
+  isLoading: _propTypes.default.bool,
+  loadingText: _propTypes.default.string,
+  onClick: _propTypes.default.func,
   disabled: _propTypes.default.bool
 };
 var _default = FancyButton;
